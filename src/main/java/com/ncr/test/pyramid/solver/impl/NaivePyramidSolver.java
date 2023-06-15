@@ -13,7 +13,9 @@ public class NaivePyramidSolver implements PyramidSolver {
     }
 
     private long getTotalAbove(int row, int column, Pyramid pyramid) {
-        if (row == 0) return 0;
+        //if (row == 0) return 0;
+        //fixed:return value show be the value of the leaf.
+        if (row == 0) return pyramid.get(row, column);
 
         int myValue = pyramid.get(row, column);
         long left  = myValue + getTotalAbove(row - 1, column, pyramid);
